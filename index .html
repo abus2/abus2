@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #070707, #0c0c0c);
+            color: #f0f0f0;
+            position: absolute;
+            top: 200px;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+          
+        }
+
+        .hero {
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+            margin-bottom: 20px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin: 10px 0 20px;
+        }
+
+        .hero .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero .buttons a {
+            text-decoration: none;
+            padding: 12px 25px;
+            border: 2px solid #38bdf8;
+            border-radius: 8px;
+            color: #38bdf8;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .buttons a:hover {
+            background-color: #38bdf8;
+            color: #0f172a;
+        }
+
+        .hero .buttons a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s;
+        }
+
+        .hero .buttons a:hover:before {
+            left: 100%;
+        }
+
+        .hero .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero .social-links a {
+            color: #38bdf8;
+            font-size: 1.8rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .hero .social-links a:hover {
+            transform: scale(1.2);
+            color: #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .hero img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .hero .buttons a {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+
+            .hero .social-links a {
+                font-size: 1.5rem;
+            }
+        }
+        .about-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px 10%;
+      gap: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* About Content */
+    .about-content {
+      max-width: 50%;
+    }
+
+    .about-content h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #12f3a8;
+      text-transform: uppercase;
+    }
+
+    .about-content p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #cccccc;
+    }
+
+    .about-content .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skill {
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #ffc400;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .skill:hover {
+      background: #fffbf5;
+      color: #121212;
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(243, 200, 130, 0.5);
+    }
+
+    .download-btn, .hire-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #f39c12;
+      color: #121212;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .download-btn:hover, .hire-btn:hover {
+      background: #ffffff;
+      color: #f39c12;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(243, 156, 18, 0.5);
+    }
+
+    .hire-btn {
+      margin-left: 15px;
+      background: #27ae60;
+      color: #ffffff;
+    }
+
+    .hire-btn:hover {
+      background: #2ecc71;
+      color: #121212;
+    }
+
+    /* About Image */
+    .about-image img {
+      width: 350px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .about-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-content, .about-image {
+        max-width: 100%;
+      }
+
+      .about-content {
+        margin-bottom: 30px;
+      }
+    }
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .skills {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+  
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .skill-item {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .skill-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .skill-bar {
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+  }
+  
+  .skill-progress {
+    background-color: #00bcd4;
+    height: 100%;
+    width: 0;
+    transition: width 1s ease-out;
+  }
+  
+  .skill-percentage {
+    text-align: right;
+    font-size: 1rem;
+    color: #bbb;
+    margin-top: 5px;
+  }
+  
+  .skill-item:hover .skill-progress {
+    width: 100%;
+  }
+
+  h2 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .filters {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      background-color: #333;
+      color: #f4f4f4;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background-color: #6c63ff;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      padding: 0 20px;
+    }
+
+    .portfolio-item {
+      background-color: #2d2d2d;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item h3 {
+      margin-top: 15px;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .portfolio-item p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-item .more-info {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 5px 15px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .portfolio-item:hover .more-info {
+      display: inline-block;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #2d2d2d;
+      padding: 20px;
+      border-radius: 8px;
+      width: 60%;
+      max-width: 800px;
+      color: #f4f4f4;
+    }
+
+    .modal-content h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .modal-content p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .portfolio-item img {
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .filters {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <img src="ABOOBACKER.jpg" alt="Profile Picture">
+        <h1>Hi, I'm ABOOBACKER SHARFUDHEEN</h1>
+        <p>A Passionate Web Developer & Designer</p>
+        <div class="buttons">
+            <a href="https://github.com/abus2">View GitHub</a>
+            <a href="#">Contact Me</a>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/a_b_u_s?igsh=cDg2MTAzZTFwczFo"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="https://github.com/abus2"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="https://www.facebook.com/profile.php?id=61555336857143"><ion-icon name="logo-facebook"></ion-icon></a>
+        </div>
+    </div>
+    <section class="about-section">
+        <!-- About Content -->
+        <div class="about-content">
+          <h2>About Me</h2>
+          <p>
+            Hi! I'm Aboobacker sharfudheen, a creative and detail-oriented web developer with expertise in modern technologies. 
+            My passion lies in building stunning, responsive websites that deliver exceptional user experiences. 
+            Let's work together to turn your ideas into reality!
+          </p>
+          <div class="skills">
+            <div class="skill" data-tooltip="Markup language for structuring web pages.">HTML</div>
+            <div class="skill" data-tooltip="Stylesheets for designing web pages.">CSS</div>
+            <div class="skill" data-tooltip="Programming language for interactivity.">JavaScript</div>
+            <div class="skill" data-tooltip="Frontend library for building UIs.">React</div>
+            <div class="skill" data-tooltip="Backend runtime environment.">Node.js</div>
+          </div>
+          <a href="resume.pdf" download class="download-btn">Download Resume</a>
+          <a href="#contact" class="hire-btn">Hire Me</a>
+        </div>
+        <!-- About Image -->
+        <div class="about-image">
+          <img src="qr.jpg" alt="Profile Picture">
+        </div>
+      </section>
+      <section class="skills">
+        <div class="container">
+          <h2 class="section-title">What I Do</h2>
+          <div class="skills-list">
+            <div class="skill-item" data-skill="90">
+              <div class="skill-name">Web Development</div>
+              <div class="skill-bar">
+                <div class="skill-progress" id="web-dev"></div>
+              </div>
+              <div class="skill-percentage">99%</div>
+            </div>
+            <div class="skill-item" data-skill="80">
+              <div class="skill-name">Graphic Design</div>
+              <div class="skill-bar">
+                <div class="skill-progress" id="graphic-design"></div>
+              </div>
+              <div class="skill-percentage">80%</div>
+            </div>
+            <div class="skill-item" data-skill="70">
+              <div class="skill-name">UI/UX Design</div>
+              <div class="skill-bar">
+                <div class="skill-progress" id="ui-ux"></div>
+              </div>
+              <div class="skill-percentage">70%</div>
+            </div>
+            <div class="skill-item" data-skill="75">
+              <div class="skill-name">SEO Optimization</div>
+              <div class="skill-bar">
+                <div class="skill-progress" id="seo"></div>
+              </div>
+              <div class="skill-percentage">75%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <section id="work">
+        <div class="container">
+          <h2>My Work</h2>
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="design">Project</button>
+            <button class="filter-btn" data-filter="apps">Mobile Apps</button>
+          </div>
+          <div class="portfolio-grid">
+            <div class="portfolio-item web">
+               
+              <img src="hero-background.jpg" alt="Web Project">
+              <h3>Welcome to Burger Hut</h3>
+              <a href="https://abus2.github.io/Burger-Hut/">
+              <div class="more-info">View More</div>
+              </a>
+            </div>
+            <div class="portfolio-item web">
+                <img src="NOZAMA.jpg" alt="Web Project">
+                <h3> Noazama</h3>
+                <a href=" https://abus2.github.io/nozama/">
+                <div class="more-info">View More</div>
+                </a>
+              </div>
+              <div class="portfolio-item web">
+                <img src="mango.jpg" alt="Web Project">
+                <h3> Pickles</h3>
+                <a href="  https://abus2.github.io/Pickle/">
+                <div class="more-info">View More</div>
+                </a>
+              </div>
+            <div class="portfolio-item design">
+              <img src="password.jpeg" alt="Design Project">
+              <h3>Generate Strong Passwords</h3>
+             
+              <a href="  https://abus2.github.io/Password-Generator/">
+              <div class="more-info">View More</div>
+              </a>
+            </div>
+    
+            <div class="portfolio-item design">
+                <img src="ip address.png" alt="Design Project">
+                <h3>IP Address Tracker</h3>
+               
+                <a href="https://abus2.github.io/IP-Address-Tracker/">
+                <div class="more-info">View More</div>
+                </a>
+              </div>
+    
+    
+              <div class="portfolio-item design">
+                <img src="puzzle.png" alt="Design Project">
+                <h3>Hangman</h3>
+               
+                <a href=" https://abus2.github.io/Hangman-game/">
+                <div class="more-info">View More</div>
+                </a>
+              </div>
+    
+    
+              <div class="portfolio-item design">
+                <img src="dorory marcic.jpg" alt="Design Project">
+                <h3>Dorothy marcic</h3>
+               
+                <a href="  https://abus2.github.io/DOROTHY-MARCIC/">
+                <div class="more-info">View More</div>
+                </a>
+              </div>
+    
+    
+    
+    
+    
+    
+            <div class="portfolio-item apps">
+              <img src="tic to.png" alt="App Project">
+             
+              <h3>Tic Tac Toe</h3>
+              <a href="  https://www.webintoapp.com/download/zip/540177/TicTacToe%201.0.zip?PVdXzNE2NkEW">
+              <div class="more-info">View More</div>
+              </a>
+            </div>
+            <!-- More items can be added similarly -->
+          </div>
+        </div>
+      </section>
+    
+      <!-- Modal -->
+      <div class="modal" id="modal">
+        <div class="modal-content">
+          <button class="close-modal" id="closeModal">&times;</button>
+          <h3>Project Title</h3>
+          <p>Detailed information about the project goes here.</p>
+        </div>
+      </div>
+
+      <script>
+ // Interactive Skill Tooltips
+ const skills = document.querySelectorAll('.skill');
+    skills.forEach(skill => {
+      skill.addEventListener('mouseover', () => {
+        const tooltipText = skill.getAttribute('data-tooltip');
+        const tooltip = document.createElement('span');
+        tooltip.textContent = tooltipText;
+        tooltip.style.position = 'absolute';
+        tooltip.style.top = '-30px';
+        tooltip.style.left = '50%';
+        tooltip.style.transform = 'translateX(-50%)';
+        tooltip.style.background = '#f39c12';
+        tooltip.style.color = '#121212';
+        tooltip.style.padding = '5px 10px';
+        tooltip.style.borderRadius = '5px';
+        tooltip.style.fontSize = '0.9rem';
+        tooltip.style.whiteSpace = 'nowrap';
+        tooltip.style.boxShadow = '0 5px 10px rgba(0, 0, 0, 0.3)';
+        skill.appendChild(tooltip);
+
+        skill.addEventListener('mouseleave', () => {
+          tooltip.remove();
+        });
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+  const skills = document.querySelectorAll('.skill-item');
+  
+  // Function to animate the skill bars
+  skills.forEach(skill => {
+    const percentage = skill.getAttribute('data-skill');
+    const progressBar = skill.querySelector('.skill-progress');
+    
+    // Set the width of the progress bar
+    progressBar.style.width = `${percentage}%`;
+  });
+});
+
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+
+        // Reset active class on all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        // Filter items based on the selected category
+        portfolioItems.forEach(item => {
+          if (filter === 'all' || item.classList.contains(filter)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Modal functionality
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+
+    portfolioItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const title = item.querySelector('h3').textContent;
+        const description = item.querySelector('p').textContent;
+        modal.querySelector('h3').textContent = title;
+        modal.querySelector('p').textContent = description;
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+      </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Dark Theme</title>
+    <style>
+        /* General Reset */
+      
+
+        /* Footer Styles */
+        footer {
+            background-color: #1e1e1e; /* Slightly lighter dark shade */
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        footer .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        footer .social-icons {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer .social-icons li {
+            display: inline-block;
+        }
+
+        footer .social-icons a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #00adb5; /* Accent color */
+        }
+
+        footer .links {
+            margin: 20px 0;
+        }
+
+        footer .links a {
+            color: #bbbbbb;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        footer .links a:hover {
+            color: #00adb5; /* Accent color */
+        }
+
+        footer .copyright {
+            font-size: 12px;
+            color: #777777;
+            margin-top: 20px;
+        }
+
+        footer .back-to-top {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            background-color: #00adb5;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        footer .back-to-top:hover {
+            background-color: #007a7f;
+        }
+    </style>
+</head>
+<body>
+
+<footer>
+    <div class="hero">
+    <img src="ABOOBACKER.jpg" alt="Profile Picture">
+
+    <ul class="social-icons">
+        <li><a href="https://www.facebook.com/profile.php?id=61555336857143" target="_blank">Facebook</a></li>
+        
+        <li><a href="https://www.instagram.com/a_b_u_s?igsh=cDg2MTAzZTFwczFo" target="_blank">instagram</a></li>
+        <li><a href="https://github.com/abus2" target="_blank">GitHub</a></li>
+    </ul>
+
+
+    <div class="copyright">&copy; 2025 ABOOBACKER SHARFUDHEEN.</div>
+
+    <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+</footer>
+
+<script>
+    // Scroll to Top Function
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+</body>
+</html>
